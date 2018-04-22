@@ -43,22 +43,7 @@ class Window(QtGui.QMainWindow):
     def Stop(self):
         fr = cv2.cvtColor(self.a, cv2.COLOR_BGR2RGB)
         cv2.imwrite("Scan1.jpg", fr)
-        # f = faceCascade.detectMultiScale(
-        #     fr,
-        #     scaleFactor=1.1,
-        #     minNeighbors=5,
-        #     minSize=(50, 50),
-        #
-        # )
-        # for(x,y,w,h) in f:
-        #     sub_face = fr[y:y+h,x:x+h]
-        #     if w==0:
-        #         cv2.imwrite("Scan1.jpg", fr)
-        #     else:
-        #         cv2.imwrite("Scan1.jpg", sub_face)
         self.timer.stop()
-        # sub_face = fr[fac[1]-20:fac[1]+fac[3]-40, fac[0]-20:fac[0]+fac[2]-40]
-        # cv2.imwrite("./Scan1.jpg", sub_face)
         image_data = tf.gfile.FastGFile("./Scan1.jpg", 'rb').read()
 
         label_lines = [line.rstrip() for line
